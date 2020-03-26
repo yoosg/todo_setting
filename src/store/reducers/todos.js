@@ -14,10 +14,13 @@ const initialState = {
   ]
 };
 
-function todos(state = initialState, action) {
+export default function todos(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_INPUT':
-      return {};
+      return {
+        ...state,
+        input: action.payload
+      };
     case 'INSERT':
       return {};
     case 'TOGGLE':
