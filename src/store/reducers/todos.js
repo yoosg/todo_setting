@@ -22,11 +22,17 @@ export default function todos(state = initialState, action) {
         input: action.payload
       };
     case 'INSERT':
-      return {};
+      return {
+        ...state,
+        todos: [...state.todos, { id: action.payload.id, text: state.input }]
+      };
     case 'TOGGLE':
       return {};
     case 'REMOVE':
-      return {};
+      return {
+        ...state,
+        todos: state.todos.filter(element => element.id !== action.payload)
+      };
 
     default:
       return state;

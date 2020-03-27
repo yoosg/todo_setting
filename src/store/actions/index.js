@@ -5,7 +5,7 @@ export const changeInput = input => {
   };
 };
 
-let id = 0;
+let id = 3;
 export const insert = text => {
   return {
     type: 'INSERT',
